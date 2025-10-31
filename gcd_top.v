@@ -10,7 +10,6 @@ register reg1(rst,clk,xld,xmux,xreg);
 register reg2(rst,clk,yld,ymux,yreg);
 comparator comp(rst,xreg,yreg,comparison);
 subtractor sub(rst,comparison,xreg,yreg,xsub,ysub);
-//fsm fsm1(rst,clk,go_i,comparison,enable,xsel,ysel,xld,yld);
 register outp(rst,clk,enable,xsub,result);
 always @(posedge clk) d_o <= result;
 endmodule
